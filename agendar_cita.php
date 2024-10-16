@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: ver_citas.php");
         exit();
     } else {
-        $_SESSION['mensaje'] = "Error al agendar la cita.";
+        $_SESSION['mensaje'] = "Error al agendar la cita." . $stmt->error ."-".$mascota_id."-". $veterinario_id."-". $fecha_cita. "-".$motivo;
     }
 }
 
