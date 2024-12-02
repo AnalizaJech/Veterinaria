@@ -40,33 +40,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
-    <div class="container mx-auto mt-10 w-1/2 bg-white p-10 rounded shadow-lg">
-        <h2 class="text-2xl font-bold text-center">Regístrate</h2>
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="max-w-lg bg-white p-6 sm:p-10 rounded-lg shadow-lg w-full mx-4">
+        <h2 class="text-2xl font-bold text-center mb-6">Regístrate</h2>
         <?php if (isset($error)): ?>
-            <div class="bg-red-200 text-red-800 p-4 rounded mt-4">
-                <?= $error; ?>
+            <div class="bg-red-200 text-red-800 p-4 rounded mb-4">
+                <?= htmlspecialchars($error); ?>
             </div>
         <?php endif; ?>
-        <form action="register.php" method="POST" class="mt-5">
-            <div class="mb-4">
-                <label for="nombre" class="block font-bold">Nombre Completo:</label>
-                <input type="text" name="nombre" id="nombre" class="w-full p-2 border rounded" required>
+        <form action="register.php" method="POST" class="space-y-4">
+            <div>
+                <label for="nombre" class="block font-bold mb-1">Nombre Completo:</label>
+                <input type="text" name="nombre" id="nombre" class="w-full p-3 border rounded focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
             </div>
-            <div class="mb-4">
-                <label for="email" class="block font-bold">Correo Electrónico:</label>
-                <input type="email" name="email" id="email" class="w-full p-2 border rounded" required>
+            <div>
+                <label for="email" class="block font-bold mb-1">Correo Electrónico:</label>
+                <input type="email" name="email" id="email" class="w-full p-3 border rounded focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
             </div>
-            <div class="mb-4">
-                <label for="password" class="block font-bold">Contraseña:</label>
-                <input type="password" name="password" id="password" class="w-full p-2 border rounded" required>
+            <div>
+                <label for="password" class="block font-bold mb-1">Contraseña:</label>
+                <input type="password" name="password" id="password" class="w-full p-3 border rounded focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
             </div>
-            <div class="mb-4">
-                <label for="telefono" class="block font-bold">Teléfono:</label>
-                <input type="text" name="telefono" id="telefono" class="w-full p-2 border rounded">
+            <div>
+                <label for="telefono" class="block font-bold mb-1">Teléfono:</label>
+                <input type="text" name="telefono" id="telefono" class="w-full p-3 border rounded focus:ring-2 focus:ring-blue-500 focus:outline-none">
             </div>
-            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700">Registrarse</button>
-            <p class="mt-4 text-center">¿Ya tienes una cuenta? <a href="login.php" class="text-blue-600 hover:underline">Inicia Sesión aquí</a></p>
+            <button type="submit" class="w-full bg-green-500 text-white py-3 rounded hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:outline-none">
+                Registrarse
+            </button>
+            <p class="mt-4 text-center text-gray-600">
+                ¿Ya tienes una cuenta? <a href="login.php" class="text-blue-600 hover:underline">Inicia Sesión aquí</a>
+            </p>
         </form>
     </div>
+</div>
+
 </body>
 </html>

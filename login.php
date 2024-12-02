@@ -50,8 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
-    <div class="flex items-center justify-center h-screen">
-        <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
+    <div class="flex items-center p-6 justify-center min-h-screen">
+        <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl">
             <h2 class="text-2xl font-bold text-center mb-6">Iniciar Sesión</h2>
             <?php if (isset($error)): ?>
                 <p class="text-red-500 text-center mb-4"><?= htmlspecialchars($error); ?></p>
